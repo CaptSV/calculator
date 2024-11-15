@@ -26,7 +26,7 @@ git clone https://github.com/CaptSV/calculator.git
 
 * Compile the program
 ```
-g++ calculator.cpp -o calculator
+g++ main.cpp -o main
 ```
 * Run the program
 ```
