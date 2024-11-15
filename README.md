@@ -30,7 +30,7 @@ g++ main.cpp -o main
 ```
 * Run the program
 ```
-./calculator
+./main
 ```
 
 ## Help
