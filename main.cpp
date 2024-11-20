@@ -7,11 +7,12 @@ float addition(float num1, float num2);
 float subtraction(float num1, float num2);
 double multiplication(double num1, double num2);
 double division(double num1, double num2);
+int mod(int num1, int num2);
 double power(double num1, double num2);
 
 int main()
 {
-  const char options = '6';
+  const char options = '7';
   char choice, endChoice;
   double x, y;
 
@@ -25,8 +26,9 @@ int main()
     cout<<"[2] Subtraction"<<endl;
     cout<<"[3] Multiply"<<endl;
     cout<<"[4] Division"<<endl;
-    cout<<"[5] Power"<<endl;
-    cout<<"[6] Quit"<<endl;
+    cout<<"[5] Modulus"<<endl;
+    cout<<"[6] Power"<<endl;
+    cout<<"[7] Quit"<<endl;
     
     // Validation loop: Allowing only '1' to '5'
     do 
@@ -67,10 +69,14 @@ int main()
       break;
 
       case '5':
+      cout<<x<<" % "<<y<<" = "<<mod(x,y);
+      break;
+
+      case '6':
       cout<<x<<" ^ "<<y<<" = "<<power(x,y);
       break;
       
-      case '6':
+      case '7':
       exit(0); // Exit the program
       break;
       
@@ -117,6 +123,11 @@ double division(double num1, double num2)
     return 1;
   }
   return num1/num2;
+}
+
+int mod(int num1, int num2)
+{
+  return num1%num2;
 }
 
 double power(double num1, double num2)
