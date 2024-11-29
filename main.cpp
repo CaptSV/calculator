@@ -9,11 +9,14 @@ double multiplication(double num1, double num2);
 double division(double num1, double num2);
 int mod(int num1, int num2);
 double power(double num1, double num2);
+double squareRoot(double num1);
+
+char choice;
 
 int main()
 {
-  const char options = '7';
-  char choice, endChoice;
+  const char options = '8';
+  char endChoice;
   double x, y;
 
   cout<<"Calculator"<<endl;
@@ -28,7 +31,8 @@ int main()
     cout<<"[4] Division"<<endl;
     cout<<"[5] Modulus"<<endl;
     cout<<"[6] Power"<<endl;
-    cout<<"[7] Quit"<<endl;
+    cout<<"[7] Square Root"<<endl;
+    cout<<"[8] Quit"<<endl;
     
     // Validation loop: Allowing only '1' to '5'
     do 
@@ -77,6 +81,10 @@ int main()
       break;
       
       case '7':
+      cout<<"The square root of "<<x<<" is "<<squareRoot(x);
+      break;
+
+      case '8':
       exit(0); // Exit the program
       break;
       
@@ -94,10 +102,16 @@ int main()
 
 void getInput(double& x, double& y) //passing by reference with the reference operator '&'
 {
-  cout<<"\nEnter first number: ";
-  cin>>x;
-  cout<<"Enter second number: ";
-  cin>>y;
+  if (choice == '7')
+  {
+    cout<<"\nEnter a number: ";
+    cin>>x;
+  } else {
+    cout<<"\nEnter first number: ";
+    cin>>x;
+    cout<<"Enter second number: ";
+    cin>>y;
+  }
 }
 
 float addition(float num1, float num2)
@@ -127,10 +141,20 @@ double division(double num1, double num2)
 
 int mod(int num1, int num2)
 {
+  if (num2 == 0)
+  {
+    cout<<"Cannot perform modulus operation while divisor is zero!"<<endl;
+    return 1;
+  }
   return num1%num2;
 }
 
 double power(double num1, double num2)
 {
   return pow(num1,num2);
+}
+
+double squareRoot(double num1)
+{
+  return sqrt(num1);
 }
